@@ -1,7 +1,8 @@
 import cloudinary from "../helper/cloudnary.js";
 import { generatejwttoken } from "../helper/utils.js"
 import User from "../model/User.js"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
+
 export const login=async(req,res)=>{
     const {email,password}=req.body;
 
