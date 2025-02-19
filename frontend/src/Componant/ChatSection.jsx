@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ChatHeader from "./ChatHeader.jsx";
+import Chatheader from './Chatheader.jsx';
 import ChatInput from "./ChatInput.jsx";
 import ChatMessagesection from "./ChatMessagesection.jsx";
 import { useChatStore } from "../Store/isChatStore.js";
@@ -11,7 +11,7 @@ const ChatSection = () => {
     <div className="flex flex-col h-full">
       {/* Fixed Chat Header */}
       <div className="sticky top-0 z-20">
-        <ChatHeader />
+        <Chatheader />
       </div>
 
       {/* Scrollable Chat Messages */}
