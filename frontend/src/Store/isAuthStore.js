@@ -3,6 +3,8 @@ import { axiosInstance } from "../utility/axios";
 import { create } from "zustand";
 import { io } from "socket.io-client";
 
+const baseURL=process.env.NODE_ENV==="development" ? "http://localhost:5000/api" : "/"
+
 export const useAuthStore=create((set,get)=>({
     authUser:null,
     isSigningUp: false,
@@ -75,7 +77,7 @@ export const useAuthStore=create((set,get)=>({
         }
       },
       connection:()=>{
-        const socket = io("http://localhost:5000",{
+        const socket = io(baseURL,{
             query:{
                 userId:get().authUser._id, 
             }
